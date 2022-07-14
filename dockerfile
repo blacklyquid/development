@@ -8,11 +8,10 @@ COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+ADD src src
+ADD templates templates
 COPY main.py ./
 COPY config.py ./
-COPY paho_mqtt.py ./
-COPY object_detector.py ./
-COPY stream_capture.py ./
 COPY SSD_MobileNet.caffemodel ./
 COPY SSD_MobileNet_prototxt.txt ./
 
