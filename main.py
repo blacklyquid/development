@@ -2,7 +2,10 @@
 
 # import configuration
 from config import Config
-import src
+from src import detected_object
+from src import object_detector
+from src import paho_mqtt
+from src import stream_capture
 
 if __name__ == "__main__":
 	
