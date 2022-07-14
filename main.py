@@ -4,7 +4,7 @@
 from config import Config
 from lyquid import detected_object
 from lyquid import object_detector
-import lyquid.paho_mqtt
+from lyquid.paho_mqtt import paho_mqtt
 from lyquid import stream_capture
 
 if __name__ == "__main__":
