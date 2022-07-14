@@ -2,10 +2,10 @@
 
 # import configuration
 from config import Config
-from src import detected_object
-from src import object_detector
-from src import paho_mqtt
-from src import stream_capture
+from lyquid import detected_object
+from lyquid import object_detector
+from lyquid import paho_mqtt
+from lyquid import stream_capture
 
 if __name__ == "__main__":
 	
