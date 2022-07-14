@@ -1,4 +1,5 @@
 # detected_object.py
+import time
 
 class detected_object:
 	labels = ["background", "aeroplane", "bicycle", "bird", 
