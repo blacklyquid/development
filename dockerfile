@@ -8,7 +8,7 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD src /usr/src/app/src
+ADD lyquid /usr/src/app/lyquid
 ADD templates /usr/src/app/templates
 COPY main.py .
 COPY config.py .
