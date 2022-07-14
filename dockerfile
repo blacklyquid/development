@@ -17,4 +17,4 @@ COPY SSD_MobileNet_prototxt.txt .
 
 RUN ls
 RUN ls src
-CMD [ "python", "./main.py" ]
+CMD [ "python", "main.py" ]
