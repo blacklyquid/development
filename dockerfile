@@ -15,4 +15,6 @@ COPY config.py .
 COPY SSD_MobileNet.caffemodel .
 COPY SSD_MobileNet_prototxt.txt .
 
+RUN ls
+
 CMD [ "python", "./main.py" ]
