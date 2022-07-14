@@ -1,18 +1,18 @@
 FROM python:3
 
-WORKDIR /usr/src/app
-
 RUN apt-get update && apt-get install libgl1 -y
 
-COPY requirements.txt ./
+WORKDIR /usr/src/app
+
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD src src
-ADD templates templates
-COPY main.py ./
-COPY config.py ./
-COPY SSD_MobileNet.caffemodel ./
-COPY SSD_MobileNet_prototxt.txt ./
+ADD src /usr/src/app/src
+ADD templates /usr/src/app/templates
+COPY main.py .
+COPY config.py .
+COPY SSD_MobileNet.caffemodel .
+COPY SSD_MobileNet_prototxt.txt .
 
 CMD [ "python", "./main.py" ]
