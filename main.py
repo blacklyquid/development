@@ -1,7 +1,7 @@
 # main.py
 
 import time
-from config import Config
+from lyquid.config import Config
 from lyquid.detected_object import detected_object
 from lyquid.object_detector import object_detector
 from lyquid.paho_mqtt import paho_mqtt
