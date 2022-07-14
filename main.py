@@ -2,7 +2,7 @@
 
 # import configuration
 from config import Config
-from src import *
+import src
 
 if __name__ == "__main__":
 	
