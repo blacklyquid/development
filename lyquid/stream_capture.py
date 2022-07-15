@@ -21,7 +21,7 @@ class stream_capture:
 	
 	def get_frame(self):
 		ret, jpeg = cv2.imencode('.jpg', self.frame)
-        	return jpeg.tobytes()
-	
+		return jpeg.tobytes()
+
 	def __del__(self):
 		self.stream.release()
