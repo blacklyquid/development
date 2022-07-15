@@ -4,3 +4,4 @@ paho-mqtt               # publish notification of object detection
 opencv-python           # cv2
 imutils
 numpy
+flask
