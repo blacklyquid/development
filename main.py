@@ -34,7 +34,7 @@ def video_feed():
 if __name__ == "__main__":
 	# sleeping might reset connection on camera
 	print("Waiting 60 seconds to start ...",flush=True)
-	time.sleep(60.0)
+	#time.sleep(60.0)
 	print("Begining...",flush=True)
 	
 	app.run(host='0.0.0.0', debug=True)
