@@ -15,7 +15,7 @@ class stream_capture:
 		while True:
 			ret, self.frame = self.stream.read()
 			if ret:
-				self.frame = imutils.resize(frame, width=400)
+				self.frame = imutils.resize(self.frame, width=400)
 				blob = cv2.dnn.blobFromImage(cv2.resize(self.frame, (300, 300)), 0.007843, (300, 300), 127.5)
 				return blob
 	
