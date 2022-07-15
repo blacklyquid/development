@@ -21,9 +21,10 @@ def index():
 
 def gen(camera):
 	while True:
-		detections = detector.get_detections( vs.get_blob() )
-		for detection in detections:
-			mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
+		vs.get_blob()
+		#detections = detector.get_detections( vs.get_blob() )
+		#for detection in detections:
+		#	mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
 		frame = camera.get_frame()
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
