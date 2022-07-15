@@ -20,7 +20,7 @@ class stream_capture:
 				return blob
 	
 	def get_frame(self):
-		While True:
+		while True:
 			ret, self.frame = self.stream.read()
 			if ret:
 				ret, jpeg = cv2.imencode('.jpg', self.frame)
