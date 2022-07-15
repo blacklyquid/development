@@ -20,9 +20,11 @@ class stream_capture:
 				return blob
 	
 	def get_frame(self):
-		ret, self.frame = self.stream.read()
-		ret, jpeg = cv2.imencode('.jpg', self.frame)
-		return jpeg.tobytes()
+		While True:
+			ret, self.frame = self.stream.read()
+			if ret:
+				ret, jpeg = cv2.imencode('.jpg', self.frame)
+				return jpeg.tobytes()
 
 	def __del__(self):
 		self.stream.release()
