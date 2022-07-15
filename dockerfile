@@ -11,7 +11,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 ADD lyquid /usr/src/app/lyquid
 ADD templates /usr/src/app/templates
 COPY main.py .
-COPY config.py .
 COPY SSD_MobileNet.caffemodel .
 COPY SSD_MobileNet_prototxt.txt .
 
