@@ -8,6 +8,7 @@ class detected_object:
 	"sheep","sofa", "train", "tvmonitor"]
 	def __init__(self, detected_confidence, label_index, frame, bounding_box):
 		self.box = bounding_box
+		self.frame = frame
 		self.confidence = detected_confidence
 		self.label = self.labels[label_index]
 		self.timestamp = time.time()
