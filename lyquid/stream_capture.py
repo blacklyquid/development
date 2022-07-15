@@ -19,5 +19,9 @@ class stream_capture:
 				blob = cv2.dnn.blobFromImage(cv2.resize(self.frame, (300, 300)), 0.007843, (300, 300), 127.5)
 				return blob
 	
+	def get_frame(self, ):
+		ret, jpeg = cv2.imencode('.jpg', self.frame)
+        	return jpeg.tobytes()
+	
 	def __del__(self):
 		self.stream.release()
