@@ -8,7 +8,7 @@ class stream_capture:
 		self.url = stream_url
 		self.stream = cv2.VideoCapture(self.url)
 		self.frame = None
-        self.new_frame = False
+		self.new_frame = False
 		if not self.stream.isOpened():
 			sys.exit('Having trouble opening video stream.' + self.url)
 
@@ -21,7 +21,7 @@ class stream_capture:
             return blob
 	
 	def read(self):
-        self.new_frame = True
+        	self.new_frame = True
 		ret, self.frame = self.stream.read()
 
     def to_jpeg_bytes(self):
