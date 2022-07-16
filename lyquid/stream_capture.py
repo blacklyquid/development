@@ -12,7 +12,7 @@ class stream_capture:
 		if not self.stream.isOpened():
 			sys.exit('Having trouble opening video stream.' + self.url)
 
-	def get_blob(self):
+	def to_blob(self):
 		if not self.new_frame:
 			self.read()
 		self.frame = imutils.resize(self.frame, width=400)
