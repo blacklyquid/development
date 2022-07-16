@@ -21,14 +21,14 @@ def index():
 
 def gen(camera):
 	while True:
-		#vs.get_blob()
-		#detections = detector.get_detections( vs.get_blob() )
-		#for detection in detections:
-		#	mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
 		camera.read()
-		frame = camera.to_jpeg_bytes()
+		#vs.get_blob()
+		detections = detector.get_detections( vs.to_blob() )
+		for detection in detections:
+			mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
+		jpeg_bytes = camera.to_jpeg_bytes()
 		yield (b'--frame\r\n'
-			b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+			b'Content-Type: image/jpeg\r\n\r\n' + jpeg_bytes + b'\r\n\r\n')
 
 @app.route('/video_feed')
 def video_feed():
