@@ -1,6 +1,6 @@
 # config.py
 
-import os
+import os, sys
 
 class config:
 	# MQTT connection
