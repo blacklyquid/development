@@ -4,7 +4,7 @@ import os, sys
 
 class config:
 	# MQTT connection
-	MQTT_HOST = os.environ.get('MQTT_HOST', None)     # 192.168.1.225'
+	MQTT_HOST = os.environ.get('MQTT_HOST', '192.168.1.225')     # 192.168.1.225'
 	MQTT_PORT = int(os.environ.get('MQTT_PORT', 1883))           # 1883
 	MQTT_CLIENT_ID = os.environ.get('MQTT_CLIENT_ID', 'obj-detection-python' )
 	MQTT_USER = os.environ.get('MQTT_USER', '')
@@ -14,7 +14,7 @@ class config:
 	MQTT_TOPIC = os.environ.get('MQTT_TOPIC','home/object-detected')
 
 	# The stream we are detecting objects in
-	STREAM_URL = os.environ.get('STREAM_URL',None)
+	STREAM_URL = os.environ.get('STREAM_URL','rtsp://admin:Shadow1648@192.168.1.82:554//h264Preview_01_sub')
 
 	# simple throttle
 	# for each object detected only send MQTT message once every 30 seconds
