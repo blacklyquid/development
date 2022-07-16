@@ -25,8 +25,6 @@ class stream_capture:
 		ret, self.frame = self.stream.read()
 
 	def to_jpeg_bytes(self):
-		if not self.frame:
-			self.read()
 		ret, jpeg = cv2.imencode('.jpg', self.frame)
 		return jpeg.tobytes()
 
