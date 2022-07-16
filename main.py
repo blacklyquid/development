@@ -20,24 +20,24 @@ def index():
 	return render_template('index.html')
 
 def gen(camera):
-	while True:
-		#vs.get_blob()
-		#detections = detector.get_detections( vs.get_blob() )
-		#for detection in detections:
-		#	mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
-		frame = camera.get_frame()
-		yield (b'--frame\r\n'
-		       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+    while True:
+        #vs.get_blob()
+        #detections = detector.get_detections( vs.get_blob() )
+        #for detection in detections:
+        #	mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
+        camera.read()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + camera.to_jpeg_bytes() + b'\r\n\r\n')
 
 @app.route('/video_feed')
 def video_feed():
-    	return Response(gen(vs),mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen(vs),mimetype='multipart/x-mixed-replace; boundary=frame')
   
 if __name__ == "__main__":
-	# sleeping might reset connection on camera
-	print("Waiting 60 seconds to start ...",flush=True)
-	#time.sleep(60.0)
-	print("Begining...",flush=True)
-	
-	app.run(host='0.0.0.0', debug=True)
+    # sleeping might reset connection on camera
+    print("Waiting 60 seconds to start ...",flush=True)
+    #time.sleep(60.0)
+    print("Begining...",flush=True)
+
+    app.run(host='0.0.0.0', debug=True)
 		
