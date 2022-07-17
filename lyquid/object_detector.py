@@ -15,6 +15,6 @@ class object_detector:
 		dol = []
 		for i in np.arange(0, nn_detections.shape[2]):
 			if nn_detections[0, 0, i, 2] > self.min_confidence:
-				dol.append(detected_object( nn_detections[0, 0, i, 2], int(nn_detections[0, 0, i, 1], detections[0, 0, i, 3:7])))
+				dol.append(detected_object( nn_detections[0, 0, i, 2], int(nn_detections[0, 0, i, 1], nn_detections[0, 0, i, 3:7])))
 
 		return dol
