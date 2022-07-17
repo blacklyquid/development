@@ -10,6 +10,8 @@ class stream_capture:
 		self.stream = cv2.VideoCapture(self.url)
 		self.frame = None
 		self.new_frame = False
+		self.frame_h = self.stream.get(cv2.CAP_PROP_FRAME_HEIGHT)
+		self.frame_w = self.stream.get(cv2.CAP_PROP_FRAME_WIDTH)
 		if not self.stream.isOpened():
 			sys.exit('Having trouble opening video stream.' + self.url)
 
@@ -18,8 +20,8 @@ class stream_capture:
 			self.read()
 		#self.frame = imutils.resize(self.frame, width=400)
 		#self.frame_w = 400
-		self.frame_h = self.stream.get(cv2.CAP_PROP_FRAME_HEIGHT)
-		self.frame_w = self.stream.get(cv2.CAP_PROP_FRAME_WIDTH)
+		#self.frame_h = self.stream.get(cv2.CAP_PROP_FRAME_HEIGHT)
+		#self.frame_w = self.stream.get(cv2.CAP_PROP_FRAME_WIDTH)
 		#self.frame_h = 400
 		blob = cv2.dnn.blobFromImage(cv2.resize(self.frame, (300, 300)), 0.007843, (300, 300), 127.5)
 		self.new_frame = False
