@@ -2,7 +2,7 @@
 
 import cv2, time
 import numpy as np
-
+from lyquid.detected_object import detected_object
 
 class object_detector:
 	def __init__( self, min_confidence, prototxt, model ):
