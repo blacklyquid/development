@@ -1,5 +1,6 @@
 # detected_object.py
 import time
+import numpy as np
 COLORS = np.random.uniform(0, 255, size=(21, 3))
 class detected_object:
 	labels = ["background", "aeroplane", "bicycle", "bird", 
