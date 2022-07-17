@@ -6,8 +6,10 @@ import time
 from flask import Flask, render_template, Response
 
 app = Flask(__name__)
-PROTOTXT = "MobileNetSSD_deploy.prototxt"
-MODEL = "MobileNetSSD_deploy.caffemodel"
+#PROTOTXT = "MobileNetSSD_deploy.prototxt"
+PROTOTXT = 'SSD_MobileNet_prototxt.txt'
+#MODEL = "MobileNetSSD_deploy.caffemodel"
+MODEL = 'SSD_MobileNet.caffemodel'
 INP_VIDEO_PATH = 'http://192.168.1.225:8889/'
 
 GPU_SUPPORT = 0
