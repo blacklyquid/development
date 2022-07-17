@@ -44,7 +44,8 @@ def gen():
 				cv2.rectangle(frame, (startX, startY), (endX, endY),    COLORS[idx], 2)
 				y = startY - 15 if startY - 15 > 15 else startY + 15
 				cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
-		frame = cv2.imencode('.jpg', frame).tobytes()
+		frame = cv2.imencode('.jpg', frame)
+		frame = frame.tobytes()
 		yield (b'--frame\r\n'
 			b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
