@@ -33,7 +33,7 @@ def gen():
 		if not ret:
 			break
 		h, w = frame.shape[:2]
-		blob = cv2.dnn.blobFromImage(frame, 0.007843, (300, 300), 127.5)
+		blob = cv2.dnn.blobFromImage(cv2.resize(self.frame, (300, 300)), 0.007843, (300, 300), 127.5)
 		net.setInput(blob)
 		detections = net.forward()
 		for i in np.arange(0, detections.shape[2]):
