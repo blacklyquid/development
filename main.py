@@ -25,7 +25,7 @@ cap = cv2.VideoCapture(INP_VIDEO_PATH)
 def index():
 	return render_template('index.html')
 
-def gen(camera):
+def gen():
 	while True:
 		ret, frame = cap.read()
 		if not ret:
@@ -50,7 +50,7 @@ def gen(camera):
 
 @app.route('/video_feed')
 def video_feed():
-	return Response(gen(vs),mimetype='multipart/x-mixed-replace; boundary=frame')
+	return Response(gen(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
 
