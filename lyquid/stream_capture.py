@@ -35,6 +35,6 @@ class stream_capture:
 		label = "{}: {:.2f}%".format(object.label,confidence*100)
 		cv2.rectangle(self.frame, (startX, startY), (endX, endY), object.color, 2)
 		y = startY - 15 if startY - 15 > 15 else startY + 15
-		cv2.putText(self.frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
+		cv2.putText(self.frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, object.color, 2)
 	def __del__(self):
 		self.stream.release()
