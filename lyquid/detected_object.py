@@ -1,6 +1,6 @@
 # detected_object.py
 import time
-
+COLORS = np.random.uniform(0, 255, size=(21, 3))
 class detected_object:
 	labels = ["background", "aeroplane", "bicycle", "bird", 
 	"boat","bottle", "bus", "car", "cat", "chair", "cow", 
@@ -12,6 +12,7 @@ class detected_object:
 		self.label = self.labels[label_index]
 		self.timestamp = time.time()
 		self.label_index = label_index
+		self.color = COLORS[label_index]
 		self.json_string = '{ "object":"' + self.label + '", "idx":"' + str(self.label_index) + '","confidence":"' + str(self.confidence) + '","time":"' + str(self.timestamp) + '"}'
 	def __str__(self):
 		return self.json_string
