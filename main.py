@@ -8,7 +8,7 @@ from flask import Flask, render_template, Response
 app = Flask(__name__)
 PROTOTXT = "MobileNetSSD_deploy.prototxt"
 MODEL = "MobileNetSSD_deploy.caffemodel"
-INP_VIDEO_PATH = 'rtsp://admin:Shadow1648@192.168.1.82:554//h264Preview_01_sub'
+INP_VIDEO_PATH = 'http://192.168.1.225:8889/'
 
 GPU_SUPPORT = 0
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus",  "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
