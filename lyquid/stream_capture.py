@@ -17,7 +17,8 @@ class stream_capture:
 		if not self.new_frame:
 			self.read()
 		self.frame = imutils.resize(self.frame, width=400)
-		self.frame_h, self.frame_w = self.frame.shape[:2]
+		self.frame_w = cv2.CAP_PROP_FRAME_WIDTH
+		self.frame_h = cv2.CAP_PROP_FRAME_HEIGHT
 		blob = cv2.dnn.blobFromImage(cv2.resize(self.frame, (300, 300)), 0.007843, (300, 300), 127.5)
 		self.new_frame = False
 		return blob
