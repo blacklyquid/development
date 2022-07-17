@@ -46,7 +46,7 @@ def gen():
 				cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
 		frame = cv2.imencode('.jpg', frame)
 		yield (b'--frame\r\n'
-			b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+			b'Content-Type: image/jpeg\r\n\r\n' + frame.tobytes() + b'\r\n\r\n')
 
 @app.route('/video_feed')
 def video_feed():
