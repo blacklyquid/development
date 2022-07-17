@@ -32,7 +32,7 @@ class stream_capture:
 	def frame_add_box(self, object):
 		box = object.box * np.array([self.frame_w, self.frame_h, self.frame_w, self.frame_h])
 		(startX, startY, endX, endY) = box.astype("int")
-		label = "{}: {:.2f}%".format(object.label,confidence*100)
+		label = "{}: {:.2f}%".format(object.label,self.confidence*100)
 		cv2.rectangle(self.frame, (startX, startY), (endX, endY), object.color, 2)
 		y = startY - 15 if startY - 15 > 15 else startY + 15
 		cv2.putText(self.frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, object.color, 2)
