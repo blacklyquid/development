@@ -25,6 +25,7 @@ def gen(camera):
 		#vs.get_blob()
 		detections = detector.get_detections( vs.to_blob() )
 		for detection in detections:
+			camera.frame_add_box(detection)
 			mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
 		jpeg_bytes = camera.to_jpeg_bytes()
 		yield (b'--frame\r\n'
