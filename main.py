@@ -23,7 +23,7 @@ def gen(camera):
 	while True:
 		camera.read()
 		#vs.get_blob()
-		detections = detector.get_detections( vs.to_blob() )
+		detections = detector.get_detections( vs.to_blob(), camera.frame_w, camera.frame_h )
 		for detection in detections:
 			camera.frame_add_box(detection)
 			mqtt.publish( Config.MQTT_TOPIC + "/" + detection.label, str(detection) )
