@@ -28,6 +28,7 @@ class stream_capture:
 	def to_jpeg_bytes(self):
 		ret, jpeg = cv2.imencode('.jpg', self.frame)
 		return jpeg.tobytes()
-
+	def frame_add_box(self, box):
+		
 	def __del__(self):
 		self.stream.release()
