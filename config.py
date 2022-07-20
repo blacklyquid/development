@@ -23,11 +23,11 @@ class config:
 	# Ignore detections with a confidence level lower than this, must be between 0-1
 	MIN_CONFIDENCE = float(os.environ.get('MIN_CONFIDENCE', .30))
 	
-	FILE_PROTOTXT = "MobileNetSSD_deploy.prototxt"
-	FILE_MODEL = "MobileNetSSD_deploy.caffemodel"
+	#FILE_PROTOTXT = "MobileNetSSD_deploy.prototxt"
+	#FILE_MODEL = "MobileNetSSD_deploy.caffemodel"
 	
-	#FILE_PROTOTXT = "SSD_MobileNet_prototxt.txt"
-	#FILE_MODEL = "SSD_MobileNet.caffemodel"
+	FILE_PROTOTXT = "SSD_MobileNet_prototxt.txt"
+	FILE_MODEL = "SSD_MobileNet.caffemodel"
 
 	GPU_SUPPORT = int(os.environ.get('GPU_SUPPORT', 0))
 		
