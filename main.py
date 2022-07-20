@@ -9,8 +9,7 @@ from config import Config
 app = Flask(__name__)
 
 GPU_SUPPORT = 0
-CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus",  "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
-COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
+COLORS = np.random.uniform(0, 255, size=(len(Config.CLASSES), 3))
 
 net = cv2.dnn.readNetFromCaffe(Config.FILE_PROTOTXT, Config.FILE_MODEL)
 
@@ -40,7 +39,7 @@ def gen():
 				idx = int(detections[0, 0, i, 1])
 				box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
 				(startX, startY, endX, endY) = box.astype("int")
-				label = "{}: {:.2f}%".format(CLASSES[idx],confidence*100)
+				label = "{}: {:.2f}%".format(Config.CLASSES[idx],confidence*100)
 				cv2.rectangle(frame, (startX, startY), (endX, endY),    COLORS[idx], 2)
 				y = startY - 15 if startY - 15 > 15 else startY + 15
 				cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
