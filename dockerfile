@@ -8,10 +8,10 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD lyquid /usr/src/app/lyquid
 ADD templates /usr/src/app/templates
+COPY config.py .
 COPY main.py .
-COPY SSD_MobileNet.caffemodel .
-COPY SSD_MobileNet_prototxt.txt .
+COPY MobileNetSSD_deploy.caffemodel .
+COPY MobileNetSSD_deploy.prototxt .
 
 CMD [ "python", "main.py" ]
