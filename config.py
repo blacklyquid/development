@@ -30,7 +30,9 @@ class config:
 	#FILE_MODEL = "SSD_MobileNet.caffemodel"
 
 	GPU_SUPPORT = int(os.environ.get('GPU_SUPPORT', 0))
-	
+		
+	CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus",  "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+
 Config = config();
 
 if not Config.MQTT_HOST:
