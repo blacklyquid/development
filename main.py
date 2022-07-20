@@ -8,7 +8,6 @@ from config import Config
 
 app = Flask(__name__)
 
-GPU_SUPPORT = 0
 COLORS = np.random.uniform(0, 255, size=(len(Config.CLASSES), 3))
 
 net = cv2.dnn.readNetFromCaffe(Config.FILE_PROTOTXT, Config.FILE_MODEL)
