@@ -6,7 +6,6 @@ from flask import Flask, render_template, Response
 
 from config import Config
 
-
 app = Flask(__name__)
 
 COLORS = np.random.uniform(0, 255, size=(len(Config.CLASSES), 3))
