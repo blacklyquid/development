@@ -14,7 +14,8 @@ class config:
 	MQTT_TOPIC = os.environ.get('MQTT_TOPIC','home/object-detected')
 
 	# The stream we are detecting objects in
-	STREAM_URL = os.environ.get('STREAM_URL','rtsp://admin:Shadow1648@192.168.1.82:554/h264Preview_01_sub')
+	#STREAM_URL = os.environ.get('STREAM_URL','rtsp://admin:Shadow1648@192.168.1.82:554/h264Preview_01_sub')
+	STREAM_URL = os.environ.get('STREAM_URL','rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp?real_stream')
 
 	# simple throttle
 	# for each object detected only send MQTT message once every 30 seconds
@@ -23,11 +24,11 @@ class config:
 	# Ignore detections with a confidence level lower than this, must be between 0-1
 	MIN_CONFIDENCE = float(os.environ.get('MIN_CONFIDENCE', .30))
 	
-	#FILE_PROTOTXT = "MobileNetSSD_deploy.prototxt"
-	#FILE_MODEL = "MobileNetSSD_deploy.caffemodel"
+	FILE_PROTOTXT = "MobileNetSSD_deploy.prototxt"
+	FILE_MODEL = "MobileNetSSD_deploy.caffemodel"
 	
-	FILE_PROTOTXT = "SSD_MobileNet_prototxt.txt"
-	FILE_MODEL = "SSD_MobileNet.caffemodel"
+	#FILE_PROTOTXT = "SSD_MobileNet_prototxt.txt"
+	#FILE_MODEL = "SSD_MobileNet.caffemodel"
 
 	GPU_SUPPORT = int(os.environ.get('GPU_SUPPORT', 0))
 		
