@@ -22,7 +22,7 @@ class config:
 	THROTTLE_TIME = int(os.environ.get('THROTTLE_TIME', 30))
 
 	# Ignore detections with a confidence level lower than this, must be between 0-1
-	MIN_CONFIDENCE = float(os.environ.get('MIN_CONFIDENCE', .30))
+	MIN_CONFIDENCE = float(os.environ.get('MIN_CONFIDENCE', .50))
 	
 	FILE_PROTOTXT = "MobileNetSSD_deploy.prototxt"
 	FILE_MODEL = "MobileNetSSD_deploy.caffemodel"
