@@ -15,8 +15,8 @@ class config:
 
 	# The stream we are detecting objects in
 	#STREAM_URL = os.environ.get('STREAM_URL','rtsp://admin:Shadow1648@192.168.1.82:554/h264Preview_01_sub')
-	#STREAM_URL = os.environ.get('STREAM_URL','rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp?real_stream')
-	STREAM_URL = os.environ.get('STREAM_URL','https://g1.ipcamlive.com/player/player.php?alias=wilmingtoncam1&skin=white&autoplay=1')
+	STREAM_URL = os.environ.get('STREAM_URL','rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp?real_stream')
+	
 	# simple throttle
 	# for each object detected only send MQTT message once every 30 seconds
 	THROTTLE_TIME = int(os.environ.get('THROTTLE_TIME', 30))
